@@ -1,36 +1,71 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+# Aplicação para gerenciamento de professores e aulas particulares
 
-First, run the development server:
+## índice
+
+- [Descrição](#descrição)
+- [Front-end](#front-end)
+- [Back-end](#back-end)
+
+## Descrição
+
+Uma aplicação desenvolvida com Next, para que alunos possam contratar professores para dar aulas particulares. O sistema permiti que professores realizem seu cadastro e gerenciem suas aulas, além de permitir que alunos busquem professores por descrição.
+
+
+## Front-end
+
+#### Clonando o projeto da API
+```bash
+git clone https://github.com/higorgustavo/frontend_contratacao_professores.git
+```
+
+#### Instalação de dependências
+Após clonar o projeto, execute o comando:
+```bash
+npm install
+```
+Concluída a instalação de dependências, inicie a aplicação com o comando:
 
 ```bash
 npm run dev
-# or
+# ou
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Back-end
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Para baixar e ativar o back-end da aplicação siga os passos a seguir.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+#### Clonando o projeto da API
+```bash
+git clone https://github.com/higorgustavo/api_contratacao_professores.git
+```
 
-## Learn More
+#### Instalação de dependências
+Após clonar o projeto, crei e ative seu Ambiente Virtual Python.
 
-To learn more about Next.js, take a look at the following resources:
+No Windows com o comando: `python -m venv .venv` e para ativar: `.venv\Scripts\activate`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+No Linux com o comando: `python3 -m venv .venv` e para ativar: `source .venv/bin/activate`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Instale as dependências do projeto: 
+```bash
+pip install -r requirements.txt
+```
 
-## Deploy on Vercel
+#### Configuração das variáveis de ambiente
+Renomeie o `.env.example` removendo ".example" e defina as variáveis de ambiente.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+#### Banco de Dados
+Após criar o banco de dados com o mesmo nome que foi informado no `DATABASE_URL` do arquivo `.env`.
+Execute o comando:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+python manage.py migrate
+```
+
+Para inciar o servidor execute o comando:
+
+```bash
+python manage.py runserver
+```
