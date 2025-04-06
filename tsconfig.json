@@ -24,6 +24,7 @@
       "@pages/*": ["pages/*"],
       "@data/*": ["data/*"],
       "@components/*": ["ui/components/*"],
+      "@routes/*": ["routes/*"],
       "@/*": ["./src/*"]
     }
   },

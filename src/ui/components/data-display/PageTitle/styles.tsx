@@ -21,7 +21,6 @@ export const PageSubtitleStyled = styled((props) => (
     <Typography variant="body1" component={"h3"} {...props} />
 ))<TypographyProps>`
     color: ${({ theme }) => theme.palette.text.primary};
-    text-transform: lowercase;
     ${({ theme }) => theme.breakpoints.down("md")} {
         font-size: ${({ theme }) => theme.typography.body2.fontSize};
     }
