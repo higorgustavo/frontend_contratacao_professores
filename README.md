@@ -69,3 +69,5 @@ Para inciar o servidor execute o comando:
 ```bash
 python manage.py runserver
 ```
+
+*Obs.: A aplicação está configurada para executar localmente, devido aos parâmetros de configuração do S3 estarem desativados na API. Configure `.env` com a porta que estiver executando o back-end.*
